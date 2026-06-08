@@ -209,3 +209,43 @@ document.querySelector(".btn-reiniciar").addEventListener("click", function () {
   resultado.classList.remove("ativa");
   telaInicio.classList.add("ativa");
 });
+
+//formulário
+document.querySelector(".form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  let erros = document.querySelectorAll(".erro-form");
+  for (let i = 0; i < erros.length; i++) {
+    erros[i].textContent = "";
+  }
+  document.querySelector(".sucesso-form").textContent = "";
+
+  let nome = document.getElementById("nome").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let mensagem = document.getElementById("mensagem").value.trim();
+  let grupos = document.querySelectorAll(".container-form");
+  let valido = true;
+
+  if (nome.length === 0) {
+    grupos[0].querySelector(".erro-form").textContent = "Informe seu nome.";
+    valido = false;
+  }
+
+  if (email.length === 0) {
+    grupos[1].querySelector(".erro-form").textContent = "Informe seu e-mail.";
+    valido = false;
+  } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    grupos[1].querySelector(".erro-form").textContent = "E-mail inválido.";
+    valido = false;
+  }
+
+  if (mensagem.length === 0) {
+    grupos[2].querySelector(".erro-form").textContent = "Escreva uma mensagem.";
+    valido = false;
+  }
+
+  if (valido) {
+    document.querySelector(".sucesso-form").textContent = "Mensagem enviada!";
+    document.querySelector(".form").reset();
+  }
+});
