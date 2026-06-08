@@ -1145,3 +1145,74 @@ footer {
   color: #22c55e;
   font-size: 0.78rem;
 }
+
+/*troca de tema*/
+.tema {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--card);
+  border: 1px solid var(--card);
+  border-radius: 12px;
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.tema span {
+  font-family: var(--corpo);
+  color: var(--cinza);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+}
+
+.btn-tema {
+  font-family: var(--corpo);
+  color: var(--cinza);
+  font-size: 0.7rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--cinza);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-tema:hover {
+  color: var(--branco);
+  border-color: var(--laranja);
+}
+
+.btn-tema.ativo {
+  color: var(--branco);
+  background: var(--laranja);
+  border-color: var(--laranja);
+}
+
+body.tema-laranja {
+  --fundo1: #000000;
+  --fundo2: #0d1017;
+  --card: #1a2030;
+  --laranja: #e86a1d;
+  --branco: #e6edf3;
+  --cinza: #8b949e;
+}
+
+body.tema-rosa {
+  --fundo1: #1a0010;
+  --fundo2: #12000a;
+  --card: #2a0018;
+  --laranja: #ff2d78;
+  --branco: #fff0f5;
+  --cinza: #b06080;
+}
+
+body.tema-azul {
+  --fundo1: #000d1a;
+  --fundo2: #000a14;
+  --card: #001a2e;
+  --laranja: #00bfff;
+  --branco: #e0f0ff;
+  --cinza: #6090b0;
+}
