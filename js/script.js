@@ -105,3 +105,107 @@ let listaPerguntas = [
     correta: 1,
   },
 ];
+
+let perguntaAtual = 0;
+let pontuacao = 0;
+let respondido = false;
+
+let telaInicio = document.querySelector(".tela-inicio");
+let perguntas = document.querySelector(".perguntas");
+let resultado = document.querySelector(".resultado");
+let btnProxima = document.querySelector(".btn-proxima");
+let contador = document.querySelector(".contador");
+let barraFill = document.querySelector(".barra-fill");
+let pergunta = document.querySelector(".pergunta");
+let opcoes = document.querySelector(".opcoes");
+let resultadoTitulo = document.querySelector(".resultado-titulo");
+let resultadoMsg = document.querySelector(".resultado-msg");
+
+function mostrarPergunta() {
+  respondido = false;
+  btnProxima.classList.remove("visivel");
+
+  let p = listaPerguntas[perguntaAtual];
+  let num = perguntaAtual + 1;
+
+  contador.textContent = "Pergunta " + num + " de " + listaPerguntas.length;
+  barraFill.style.width = (num / listaPerguntas.length) * 100 + "%";
+  pergunta.textContent = p.pergunta;
+  opcoes.innerHTML = "";
+
+  for (let i = 0; i < p.opcoes.length; i++) {
+    let btn = document.createElement("button");
+    btn.className = "opcao";
+    btn.textContent = p.opcoes[i];
+    btn.dataset.indice = i;
+    btn.addEventListener("click", selecionarOpcao);
+    opcoes.appendChild(btn);
+  }
+}
+
+function selecionarOpcao() {
+  if (respondido) return;
+  respondido = true;
+
+  let indice = parseInt(this.dataset.indice);
+  let correta = listaPerguntas[perguntaAtual].correta;
+  let todasOpcoes = document.querySelectorAll(".opcao");
+
+  for (let i = 0; i < todasOpcoes.length; i++) {
+    todasOpcoes[i].disabled = true;
+  }
+
+  if (indice === correta) {
+    this.classList.add("correta");
+    pontuacao++;
+  } else {
+    this.classList.add("errada");
+    todasOpcoes[correta].classList.add("correta");
+  }
+
+  btnProxima.classList.add("visivel");
+  btnProxima.textContent =
+    perguntaAtual === listaPerguntas.length - 1 ? "Ver Resultado" : "Próxima";
+}
+
+function mostrarResultado() {
+  perguntas.classList.remove("ativa");
+  resultado.classList.add("ativa");
+
+  if (pontuacao === 10) {
+    resultadoTitulo.textContent = "Perfeito!";
+    resultadoMsg.textContent = "Você acertou tudo.";
+  } else if (pontuacao >= 7) {
+    resultadoTitulo.textContent = "Muito bom!";
+    resultadoMsg.textContent = pontuacao + " de 10. Quase lá.";
+  } else if (pontuacao >= 5) {
+    resultadoTitulo.textContent = "Razoável.";
+    resultadoMsg.textContent = pontuacao + " de 10. Vale rever o conteúdo.";
+  } else {
+    resultadoTitulo.textContent = "Pode melhorar.";
+    resultadoMsg.textContent = pontuacao + " de 10. Tente novamente.";
+  }
+}
+
+document.querySelector(".btn-iniciar").addEventListener("click", function () {
+  telaInicio.classList.remove("ativa");
+  perguntas.classList.add("ativa");
+  mostrarPergunta();
+});
+
+btnProxima.addEventListener("click", function () {
+  perguntaAtual++;
+  if (perguntaAtual < listaPerguntas.length) {
+    mostrarPergunta();
+  } else {
+    mostrarResultado();
+  }
+});
+
+document.querySelector(".btn-reiniciar").addEventListener("click", function () {
+  perguntaAtual = 0;
+  pontuacao = 0;
+  respondido = false;
+  resultado.classList.remove("ativa");
+  telaInicio.classList.add("ativa");
+});
