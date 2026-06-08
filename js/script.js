@@ -250,3 +250,18 @@ document.querySelector(".form").addEventListener("submit", function (e) {
   }
 });
 
+//troca de tema
+let btnsTema = document.querySelectorAll(".btn-tema");
+
+for (let t = 0; t < btnsTema.length; t++) {
+  btnsTema[t].addEventListener("click", function () {
+    let tema = this.dataset.tema;
+    document.body.classList.remove("tema-laranja", "tema-rosa", "tema-azul");
+    document.body.classList.add("tema-" + tema);
+    for (let j = 0; j < btnsTema.length; j++) {
+      btnsTema[j].classList.remove("ativo");
+    }
+    this.classList.add("ativo");
+  });
+}
+
