@@ -1055,3 +1055,93 @@ footer {
 .btn-proxima.visivel {
   display: block;
 }
+
+/*formulário*/
+.formulario {
+  background-color: var(--fundo2);
+  padding: 4rem;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
+}
+
+.conteudo-form {
+  margin-bottom: 2rem;
+}
+
+.conteudo-form h2 {
+  font-family: var(--titulo);
+  color: var(--branco);
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.conteudo-form p {
+  font-family: var(--corpo);
+  color: var(--cinza);
+  line-height: 1.5;
+}
+
+.form {
+  width: var(--largura);
+  max-width: 600px;
+  flex-direction: column;
+  text-align: left;
+  display: flex;
+  gap: 1rem;
+}
+
+.container-form {
+  flex-direction: column;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.label-form {
+  font-family: var(--corpo);
+  color: var(--cinza);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-form {
+  font-family: var(--corpo);
+  color: var(--branco);
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 0.8rem 1rem;
+  outline: none;
+  resize: none;
+}
+
+.erro-form {
+  color: #ef4444;
+  font-size: 0.78rem;
+}
+
+.btn-form {
+  padding: 0.8rem 1.7rem;
+  background: var(--laranja);
+  border-radius: 10px;
+  border: none;
+  font-family: var(--corpo);
+  color: var(--branco);
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+}
+
+.btn-form:hover {
+  transform: translateY(-2px);
+}
+
+.sucesso-form {
+  color: #22c55e;
+  font-size: 0.78rem;
+}
