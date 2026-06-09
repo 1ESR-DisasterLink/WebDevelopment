@@ -82,7 +82,8 @@ DisasterLink/
 │   ├── slide1.png 
 │   ├── slide2.png 
 │   ├── slide3.png 
-│   └── logo.png     
+│   └── logo.png
+├── AI.md ← Documentação do uso de IA no projeto
 └── README.md ← Este arquivo
 ```
 
