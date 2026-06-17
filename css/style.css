@@ -31,6 +31,14 @@ html {
   --altura: 100dvh;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--fundo1);
+}
+
 /*nav*/
 nav {
   background-color: var(--fundo1);
@@ -86,6 +94,16 @@ nav ul a:hover {
 .hero-img {
   position: absolute;
   filter: brightness(0.35);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-conteudo {
@@ -500,7 +518,7 @@ nav ul a:hover {
 /*rodapé*/
 footer {
   padding: 1rem 0;
-  background-color: var(--fundo2);
+  background-color: var(--fundo1);
 }
 
 .container-footer {
