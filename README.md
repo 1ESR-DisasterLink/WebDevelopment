@@ -1,4 +1,4 @@
-# 🌐 DisasterLink — Landing Page
+# 🌐 DisasterLink 
 
 > Projeto desenvolvido como parte da disciplina de Web Development.
 
@@ -53,10 +53,10 @@ O **DisasterLink** é um sistema de comunicação de emergência criado para res
 
 ```bash
 # Clone o repositório
-git clone https://github.com/FrameLab-1ESR/DisasterLink.git
+git clone https://github.com//DisasterLink/WebDevelopment.git
 
 # Acesse a pasta
-cd DisasterLink-main
+cd WebDevelopment-main
 
 # Abra no navegador
 open index.html
@@ -69,7 +69,7 @@ open index.html
 ## 📁 Estrutura do repositório
 
 ```
-DisasterLink/
+WebDevelopment/
 ├── index.html ← Estrutura completa da página
 ├── css/
 │   └── style.css ← Estilos, variáveis de tema e responsividade
