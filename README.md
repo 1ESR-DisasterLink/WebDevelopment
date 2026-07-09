@@ -53,7 +53,7 @@ O **DisasterLink** é um sistema de comunicação de emergência criado para res
 
 ```bash
 # Clone o repositório
-git clone https://github.com//DisasterLink/WebDevelopment.git
+git clone https://github.com//1ESR-DisasterLink/WebDevelopment.git
 
 # Acesse a pasta
 cd WebDevelopment-main
